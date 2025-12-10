@@ -1,4 +1,4 @@
-1st solution:(brute force):TIME COMPLEXITY:O(n^3):SPACE COMPLEXITY:(O(2*(n*m)))
+FIRST SOLUTION:(brute force):TIME COMPLEXITY:O(n^3):SPACE COMPLEXITY:(O(2*(n*m)))
 class Solution {
     public void setZeroes(int[][] matrix) {
         int size=matrix.length;
