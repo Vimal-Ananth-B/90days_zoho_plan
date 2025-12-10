@@ -30,3 +30,35 @@ class Solution {
         }
     }
 }
+--------------------------------------------------------------------------
+SECOND SOLUTION:(1st level optimal)TIME COMPLEXITY:(O(2n)):SPACE COMPLEXITY:(O(n+m))
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int size=matrix.length;
+        int size2=matrix[0].length;
+        int rowarr[]=new int[size];
+        int colarr[]=new int[size2];
+        // Queue<Integer> qu=new LinkedList<>();
+        for(int i=0;i<size;i++)
+        {
+            for(int j=0;j<size2;j++)
+            {
+                if(matrix[i][j]==0)
+                {
+                    rowarr[i]=1;
+                    colarr[j]=1;
+                }
+            }
+        }
+            for(int i=0;i<size;i++)
+            {
+                for(int j=0;j<size2;j++)
+                {
+                    if(rowarr[i]==1 || colarr[j]==1)
+                    {
+                        matrix[i][j]=0;
+                    }
+                }
+            }
+        }
+    }
