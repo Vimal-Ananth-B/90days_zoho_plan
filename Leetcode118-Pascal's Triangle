@@ -34,3 +34,27 @@ class Solution {
         return finlist;
     }
 }
+-------------------------------------------------------------------------------------
+SECOND SOLUTION:TIME COMPLEXITY:O(n^2)||SPACE COMPLEXITY:O(N^2)
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> finlist=new ArrayList<>();
+        for(int i=0;i<numRows;i++)
+        { 
+            List<Integer> reslist=new ArrayList<>();
+            for(int j=0;j<=i;j++)
+            {
+                if(j==0 || j==i)
+                {
+                    reslist.add(1);
+                }
+                else
+                {
+                    reslist.add(finlist.get(i-1).get(j-1)+finlist.get(i-1).get(j));
+                }
+            }
+            finlist.add(reslist);
+        }
+        return finlist;
+    }
+}
