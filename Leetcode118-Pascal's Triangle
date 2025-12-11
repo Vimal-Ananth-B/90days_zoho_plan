@@ -1,3 +1,4 @@
+FirstSolutionNCR|TIME COMPLEXITY:O(n^3)|SPACE COMPLEXITY:O(1)
 class Solution {
     public static long NCR(int a,int b)
         {
