@@ -1,0 +1,17 @@
+OPTIMAL SOLUTION:KADANE"S ALGORITHM || TIME COMPLEXITY:O(N) || SPACE COMPLEXITY:O(1)
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int finmax=Integer.MIN_VALUE;
+        int max=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            max=max+nums[i];
+            finmax=Math.max(finmax,max);
+            if(max<0) 
+            {
+                max=0;
+            }
+        }
+        return finmax;
+    }
+}
