@@ -1,0 +1,35 @@
+LINK: https://www.geeksforgeeks.org/problems/alternative-sorting1311/1
+FIRST SOLUTION:TIME COMPLEXITY:O(N^2)||SPACE COMPLEXITY:O(N)
+class Solution {
+    public static ArrayList<Integer> alternateSort(int[] arr) {
+       ArrayList<Integer> arrlist=new ArrayList<>();
+        int len=arr.length;
+         for(int i=1;i<len;i++)
+        {
+            for(int j=0;j<len;j++)
+            {
+                if(arr[j]<arr[i])
+                {
+                    int temp=arr[j];
+                    arr[j]=arr[i];
+                    arr[i]=temp;
+                }
+            }
+        }
+        int i=0,j=len-1;
+        for(int k=0;k<len;k++)
+        {
+            if(k%2==0 && k<len)
+            {
+                arrlist.add(arr[i]);
+                i++;
+            }
+            else
+            {
+                arrlist.add(arr[j]);
+                j--;
+            }
+        }
+        return arrlist;
+    }
+}
