@@ -31,3 +31,38 @@ class Solution {
         return len-count;
     }
 }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+2nd solution:TIMECOMPLEXITY:O(N) and SPACECOMPLEXITY:O(N)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int len=nums.length;
+        int lastcheck=0,count=0,j=1;
+        for(int i=1;i<len;i++)
+        {
+            if(nums[lastcheck]==nums[i])
+                {
+                    nums[i]=789;
+                    count++;
+                }
+                else
+                {
+                   lastcheck=i;
+                }
+        }
+        int lastswap=0;
+        for(int i=0;i<len;i++)
+        {
+            if(nums[i]!=789 && lastswap<(len-count))
+            {
+                nums[lastswap]=nums[i];
+                lastswap++;
+                
+            }
+            else
+            {
+                continue;
+            }
+        }
+    return len-count;
+    }
+}
