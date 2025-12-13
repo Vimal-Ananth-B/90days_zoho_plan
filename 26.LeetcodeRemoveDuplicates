@@ -66,3 +66,21 @@ class Solution {
     return len-count;
     }
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FINAL OPTIMAL:
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length==0) return 0;
+        int len=nums.length;
+        int j=1;
+        for(int i=1;i<len;i++)
+        {
+            if(nums[i-1]!=nums[i])
+                {
+                    nums[j]=nums[i];
+                    j++;
+                }
+        }
+    return j;
+    }
+}
