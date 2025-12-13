@@ -8,7 +8,7 @@ class Solution {
         {
             if(temp==nums[i])
                 {
-                    count++;
+                    count++; 
                 }
                 else
                 {
