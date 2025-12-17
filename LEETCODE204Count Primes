@@ -1,0 +1,37 @@
+Prime number checking:TIME COMPLEXITY:O(n logn logn)||SPACE COMPLEXITY:O(N)
+class Solution {
+    public int countPrimes(int n) {
+        int notPrimeCount=0;
+        boolean notPrime[]=new boolean[n];
+        for(int i=0;i<n;i++)
+        {
+            notPrime[i]=true;
+            if(i==0 || i==1)
+            {
+                notPrime[i]=false;
+            }
+        }
+        for(int i=2;i<n;i++)
+        {
+            int temp=i;
+            for(int j=2;j<=n/2;j++)
+            {
+                int temp2=temp*j;
+                if(temp2<n)
+                {
+                    notPrime[temp2]=false;
+                }
+            }
+        }
+        int primecount=0;
+        for(int i=0;i<n;i++)
+        {
+            if(notPrime[i]==true)
+            {
+                primecount++;
+            }
+        }
+        return primecount;
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
