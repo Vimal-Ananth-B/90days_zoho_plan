@@ -27,3 +27,25 @@ class Solution {
         }
     }
 }
+-------------------------------------------------------------------------------------------------------------
+OPTIMAL SOLUTION: TIME COMPLEXITY:O(N) || SPACE COMPLEXITY:O(1)
+class Solution {
+    void leftRotate(int arr[], int d) {
+         int len=arr.length;
+         rotate(arr,0,d-1);
+         rotate(arr,d,len-1);
+         rotate(arr,0,len-1);
+    }
+    public static int[] rotate(int arr[],int a,int b)
+    {
+        while(a<b)
+        {
+            int temp=arr[b];
+            arr[b]=arr[a];
+            arr[a]=temp;
+            a++;
+            b--;
+        }
+        return arr;
+    }
+}
