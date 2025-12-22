@@ -49,3 +49,26 @@ class Solution {
         return arr;
     }
 }
+-------------------------------------------------------------------------------------------------------------
+OPTIMAL SOLUTION2: TIME COMPLEXITY:O(N) || SPACE COMPLEXITY:O(1)
+class Solution {
+    public void rotateclockwise(int[] arr, int k) {
+        int len=arr.length;
+        k=k%len;
+        rotate(arr,len-k,len-1);
+        rotate(arr,0,len-k-1);
+        rotate(arr,0,len-1);
+    }
+    public static int[] rotate(int[]arr,int a,int b)
+    {
+        while(a<b)
+        {
+            int temp=arr[a];
+            arr[a]=arr[b];
+            arr[b]=temp;
+            a++;
+            b--;
+        }
+        return arr;
+    }
+}
